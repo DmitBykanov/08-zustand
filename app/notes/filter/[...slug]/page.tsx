@@ -6,6 +6,8 @@ import { Metadata } from "next";
 
 export const dynamic = "force-dynamic";
 
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL;
+
 export interface NotesPageProps {
   params: Promise<{ slug: string[] }>;
 }
@@ -15,10 +17,25 @@ export async function generateMetadata({
 }: NotesPageProps): Promise<Metadata> {
   const { slug } = await params;
   const tag = slug?.[0] ?? "all";
+  const capitalizedTag = tag.toUpperCase().charAt(0) + tag.slice(1);
 
   return {
-    title: `Notes - ${tag.charAt(0).toUpperCase() + tag.slice(1)}`,
-    description: `A collection of notes tagged with "${tag}".`,
+    title: `Notes — ${capitalizedTag} | NoteHub`,
+    description: `Viewing notes filtered by "${tag}".`,
+    openGraph: {
+      title: `Notes — ${capitalizedTag} | NoteHub`,
+      description: `Viewing notes filtered by "${tag}".`,
+      url: `${SITE_URL}/notes/filter/${tag}`,
+      images: [
+        {
+          url: "https://ac.goit.global/fullstack/react/notehub-og-meta.jpg",
+          width: 1200,
+          height: 630,
+          alt: "NoteHub",
+        },
+      ],
+      type: "article",
+    },
   };
 }
 

@@ -12,7 +12,7 @@ const roboto = Roboto({
   variable: "--font-roboto",
 });
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL;
 
 export const metadata: Metadata = {
   title: "NoteHub",
