@@ -22,7 +22,7 @@ export async function generateMetadata(): Promise<Metadata> {
           alt: "NoteHub",
         },
       ],
-      type: "website",
+      type: "article",
     },
   };
 }
