@@ -22,7 +22,15 @@ export const metadata: Metadata = {
     description:
       "A clean, simple app to organize your notes and knowledge—anytime, anywhere.",
     url: SITE_URL,
-    images: ["https://ac.goit.global/fullstack/react/notehub-og-meta.jpg"],
+    images: [
+      {
+        url: "https://ac.goit.global/fullstack/react/notehub-og-meta.jpg",
+        width: 1200,
+        height: 630,
+        alt: "NoteHub",
+      },
+    ],
+    type: "article",
   },
 };
 

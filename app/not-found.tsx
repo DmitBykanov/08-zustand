@@ -10,7 +10,15 @@ export const metadata: Metadata = {
     title: "Page Not Found — NoteHub",
     description: "The page you are looking for does not exist.",
     url: `${SITE_URL}/not-found`,
-    images: ["https://ac.goit.global/fullstack/react/notehub-og-meta.jpg"],
+    images: [
+      {
+        url: "https://ac.goit.global/fullstack/react/notehub-og-meta.jpg",
+        width: 1200,
+        height: 630,
+        alt: "NoteHub",
+      },
+    ],
+    type: "article",
   },
 };
 
