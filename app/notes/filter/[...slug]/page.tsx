@@ -20,11 +20,11 @@ export async function generateMetadata({
   const capitalizedTag = tag.toUpperCase().charAt(0) + tag.slice(1);
 
   return {
-    title: `Notes — ${capitalizedTag} | NoteHub`,
-    description: `Viewing notes filtered by "${tag}".`,
+    title: `${capitalizedTag} | NoteHub`,
+    description: `Viewing notes by "${tag}".`,
     openGraph: {
-      title: `Notes — ${capitalizedTag} | NoteHub`,
-      description: `Viewing notes filtered by "${tag}".`,
+      title: `${capitalizedTag} | NoteHub`,
+      description: `Viewing notes by "${tag}".`,
       url: `${SITE_URL}/notes/filter/${tag}`,
       images: [
         {

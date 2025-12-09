@@ -6,20 +6,26 @@ const tags: NoteTag[] = ["Personal", "Work", "Todo", "Meeting", "Shopping"];
 
 export default function SidebarNotes() {
   return (
-    <ul className={css.menuList}>
-      <li className={css.menuItem}>
-        <Link href="/notes/filter/all" className={css.menuLink}>
-          All notes
-        </Link>
-      </li>
+    <>
+      <Link href="/notes/action/create" className={css.createButton}>
+        Create note
+      </Link>
 
-      {tags.map((tag) => (
-        <li key={tag} className={css.menuItem}>
-          <Link href={`/notes/filter/${tag}`} className={css.menuLink}>
-            {tag}
+      <ul className={css.menuList}>
+        <li className={css.menuItem}>
+          <Link href="/notes/filter/all" className={css.menuLink}>
+            All notes
           </Link>
         </li>
-      ))}
-    </ul>
+
+        {tags.map((tag) => (
+          <li key={tag} className={css.menuItem}>
+            <Link href={`/notes/filter/${tag}`} className={css.menuLink}>
+              {tag}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </>
   );
 }

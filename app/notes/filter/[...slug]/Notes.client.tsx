@@ -7,7 +7,7 @@ import { fetchNotes, FetchNotesResponse } from "@/lib/api";
 import NoteList from "@/components/NoteList/NoteList";
 import Pagination from "@/components/Pagination/Pagination";
 import SearchBox from "@/components/SearchBox/SearchBox";
-import Link from "next/link";
+// import Link from "next/link";
 import css from "./NotesPage.module.css";
 
 const NOTES_PER_PAGE = 12;
@@ -62,9 +62,22 @@ export default function NotesClient({ tag }: NotesClientProps) {
           />
         )}
 
-        <Link href="/notes/action/create" className={css.button}>
-          Create note +
-        </Link>
+        <p className={css.stats}>
+          {tag === "all" ? (
+            <>
+              All notes: <strong>{data?.notes.length ?? 0}</strong>
+            </>
+          ) : (
+            <>
+              <strong>{tag}</strong> — Notes:{" "}
+              <strong>{data?.notes.length ?? 0}</strong>
+            </>
+          )}
+        </p>
+
+        {/* <Link href="/notes/action/create" className={css.button}>
+          Create note
+        </Link> */}
       </header>
 
       <NoteList notes={notes} />
